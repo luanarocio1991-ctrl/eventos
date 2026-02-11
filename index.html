@@ -291,3 +291,19 @@ function myFunction() {
   }
 }
 </script>
+
+
+<iframe id="player" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const r = params.get("r");
+
+  if (r) {
+    const decoded = atob(r);
+    document.getElementById("player").src = decoded;
+  }
+</script>
+
+</body>
+</html>	
