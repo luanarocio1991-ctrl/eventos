@@ -1,51 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eventos en Vivo</title>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Eventos - Mega Deportes TV" />
+    <meta property="og:locale" content="es_ar" />
+    <link rel="icon" href="/img/mega120.png" type="image/png" />
 
-<style>
-body {
-    background: #111;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-.iframe-container {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    padding-top: 56.25%;
-}
-.iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-</style>
+
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://pro-staging.fontawesome.com/releases/v6.0.0-beta1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href="/css/css1.css">
+<script src="optimize.js?v=1.0"></script>
+    <title>Eventos - Mega Deportes TV</title>
+
+    <style>
+        .btn-md {
+            background-color: #1f6feb !important;
+            border: none;
+            color: #fff;
+            padding: 10px 26px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .clean-gray {
+            border: solid 1px #dedede;
+            background: #efefef;
+            color: #222;
+            padding: 4px;
+            text-align: center;
+        }
+        .my-0 { margin-top:0!important; margin-bottom:0!important; }
+        .mr-md-auto { margin-right:auto!important; }
+        .iframe-container {
+            overflow: hidden;
+            padding-top: 56.25%;
+            position: relative;
+        }
+        .iframe-container iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
-<body>
+<body class="dark-mode container">
+    <div class="w3-main w3-content w3-padding" style="max-width:1300px; margin-top:90px;">
+        <!-- App Header -->
+        <div class="appHeader bg-primary text-light">
+            <div class="pageTitle">
+                <div class="left"></div>
+                <a href="/">
+                    <img src="/imghd/logomegatv.png" alt="MegaDeportesTV" style="width:220px; height:40px;">
+                </a>
+            </div>
+        </div>
+    </div>
 
-<h3>Eventos en Vivo 🎥</h3>
+    <div class="w3-main w3-content w3-padding" style="max-width:1300px; margin-top:100px;">
+        <center><h3>Eventos+</h3></center>
 
-<div class="iframe-container">
-    <iframe id="player" allowfullscreen></iframe>
-</div>
+        <div class="embed-responsive embed-responsive-16by9" style="width:100%; margin:auto; border-radius:7px;">
+            <script type="text/javascript">
+                function getParameterByName(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
 
-<script>
-var params = new URLSearchParams(window.location.search);
-var embed = params.get("r");
+                var id = getParameterByName('p');
+                var embed = getParameterByName('embed') || getParameterByName('r') || false;
 
-if (embed) {
-    document.getElementById("player").src = atob(embed);
-}
-</script>
+                if (embed) {
+                    document.write('<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="'+atob(embed)+'" scrolling="no"></iframe>');
+                } else {
+                    document.write('<img class="embed-responsive-item" src="https://pbs.twimg.com/media/DjY2G6tV4AA5-0p.jpg" width="100%">');
+                }
+            </script>
+        </div>
+    </div>
 
+    <button type="button" class="btn btn-lg btn-block btn-md" onclick="location.reload()">Recargar reproductor</button>
+
+    <div class="sharethis-inline-share-buttons"></div>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=678301efad6fa80019a09516&product=sop' async='async'></script>
+
+
+
+    <center>
+        <h5>Mega Deportes TV &copy; Todos los derechos reservados.</h5>
+    </center>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"207c27adb7b640458ca3394d91faa76a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
+
